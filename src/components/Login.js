@@ -31,39 +31,40 @@ function Login() {
               </div>
 
               <form className='w-3/4 mx-auto text-left'>
-              <div className="mb-4">
-                <label htmlFor="name" className="block text-sm font-bold text-grayscale-60">Full Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  className="mt-1 p-2 px-5 w-full border border-gray-300 rounded-3xl bg-grayscale-20 focus:outline-none"
-                  placeholder="Enter your name"
-                />
-              </div>
+              
+                <div className="mb-4">
+                  <label htmlFor="name" className="block text-sm font-bold text-grayscale-60">Full Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    className="mt-1 p-2 px-5 w-full border border-gray-300 rounded-3xl bg-grayscale-20 focus:outline-none"
+                    placeholder="Enter your name"
+                  />
+                </div>
 
-              <div className="mb-4">
-                <label htmlFor="password" className="block text-sm font-bold text-grayscale-60">Password</label>
-                <input
-                  type="password"
-                  id="password"
-                  className="mt-1 p-2 px-5 w-full border border-gray-300 rounded-3xl bg-grayscale-20 focus:outline-none"
-                  placeholder="Enter your password"
-                />
-              </div>
+                <div className="mb-4">
+                  <label htmlFor="password" className="block text-sm font-bold text-grayscale-60">Password</label>
+                  <input
+                    type="password"
+                    id="password"
+                    className="mt-1 p-2 px-5 w-full border border-gray-300 rounded-3xl bg-grayscale-20 focus:outline-none"
+                    placeholder="Enter your password"
+                  />
+                </div>
 
-              <div className="mb-4">
-                <button className="w-full py-2 bg-primary text-white font-semibold rounded-3xl focus:outline-none">
-                  Login
-                </button>
-              </div>
+                <div className="mb-4">
+                  <button className="w-full py-2 bg-primary text-white font-semibold rounded-3xl focus:outline-none">
+                    Login
+                  </button>
+                </div>
 
-              <div className="flex justify-end mb-4">
-                <Link className="text-sm text-primary hover:underline font-bold">Forgot password?</Link>
-              </div>
+                <div className="flex justify-end mb-4">
+                  <Link className="text-sm text-primary hover:underline font-bold">Forgot password?</Link>
+                </div>
 
-              <div className="text-center text-sm">
-                <p className='text-grayscale-60 font-bold'>Don't have an account? <Link className="text-primary font-bold hover:underline">Register</Link></p>
-              </div>
+                <div className="text-center text-sm">
+                  <p className='text-grayscale-60 font-bold'>Don't have an account? <Link className="text-primary font-bold hover:underline">Register</Link></p>
+                </div>
               </form>
             </div>
           </div>
