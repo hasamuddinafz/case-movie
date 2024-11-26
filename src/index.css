@@ -6,3 +6,14 @@
 .payment-methods .payment label{
     border: 1px solid #B43FEB;
 }
+
+.slick-next, .slick-prev {
+    color: black; 
+    background-color: #B43FEB; 
+    border-radius: 50%; 
+    opacity: 1; 
+  }
+
+  .slick-next:hover, .slick-prev:hover {
+    background-color: #530975; 
+  }
