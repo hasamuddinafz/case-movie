@@ -12,6 +12,8 @@
         const [activeLink, setActiveLink] = useState('discovery'); 
         const [data, setData] = useState(null);
         const [seriesData, setSeriesData] = useState(null);
+
+        const [isDarkMode, setIsDarkMode] = useState(false);
         useEffect(()=>{
             axios.get('https://imdb-top-100-movies.p.rapidapi.com',
                 {
@@ -47,6 +49,18 @@
                 console.error(error);
             });
         }, []);
+        //togglenin fonksiyonu
+        const toggleTheme = () => {
+            if (isDarkMode) {
+              setIsDarkMode(false);
+              document.documentElement.classList.remove('dark');
+              localStorage.setItem('theme', 'light');
+            } else {
+              setIsDarkMode(true);
+              document.documentElement.classList.add('dark');
+              localStorage.setItem('theme', 'dark');
+            }
+          };
         // const data = [
         //     {
         //       id: 1,
@@ -118,10 +132,10 @@
 
     return (
         <>
-        <div className=''>
-            <div className='navbar m-3 px-10 flex justify-between items-center '>
+        <div className='dark:bg-darksmooth m-0 dark:text-white'>
+            <div className='navbar m-0 py-3 px-10 flex justify-between items-center '>
                 <div className='navbar-brand'>
-                    <h1 className='font-bold text-2xl'>CineMax</h1>
+                    <h1 className='font-bold text-2xl '>CineMax</h1>
                 </div>
                 <div className='navbar-items flex justify-between items-center'>
                     <Link className='m-3 font-medium'>Movies</Link>
@@ -145,7 +159,7 @@
                 </div>
             </div>
             <div className='main-content flex flex-row w-auto'>
-                <div className="sidebar bg-grayscale-20 w-2/12 py-10 h-screen border border-r-4 m-0">
+                <div className="dark:bg-linedark bg-grayscale-20 w-2/12 py-10 h-screen m-0">
                     <h1 className="text-grayscale-80 text-sm my-3 ml-4">MENU</h1>
                     <ul>
                         <li className={`${ activeLink === 'discovery' ? 'text-primary border-l-8 border-l-primary' : 'text-grayscale-80' }`} onClick={() => setActiveLink('discovery')}>
@@ -182,11 +196,15 @@
                             <span>Download</span>
                         </Link>
                         </li>
-                        <li className={`${ activeLink === 'dark-mode' ? 'text-primary border-l-8 border-l-primary' : 'text-grayscale-80' }`} onClick={() => setActiveLink('dark-mode')}>
+                        <li className={`flex items-center ${ activeLink === 'dark-mode' ? 'text-primary border-l-8 border-l-primary' : 'text-grayscale-80' }`} onClick={() => setActiveLink('dark-mode')}>
                         <Link className='flex items-center font-bold p-2 rounded-lg'>
                             <span className="mx-2 ml-4"><Moon /></span>
                             <span>Dark Mode</span>
                         </Link>
+                            <label className="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" className="sr-only peer" onClick={toggleTheme}/>
+                                <div className="relative w-11 h-6 bg-primary peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary dark:peer-focus:ring-primary rounded-full peer dark:bg-primary peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all  peer-checked:bg-primary"></div>
+                            </label>
                         </li>
                         <li className={`${ activeLink === 'setting' ? 'text-primary border-l-8 border-l-primary' : 'text-grayscale-80' }`} onClick={() => setActiveLink('setting')}>
                         <Link className='flex items-center font-bold p-2 rounded-lg'>
