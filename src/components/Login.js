@@ -29,7 +29,7 @@ function Login() {
 
   return (
     <>
-      <div className="h-screen dark:bg-darksmooth m-0 dark:text-white">
+      <div className="h-auto dark:bg-darksmooth m-0 dark:text-white">
         <div className="xl:flex xl:flex-row flex flex-col justify-between">
           <div className="m-0 p-0 bg-primary xl:w-1/2 w-2/2">
             <div className=" w-2/3 m-auto my-5 p-5 flex flex-col justify-between ">
