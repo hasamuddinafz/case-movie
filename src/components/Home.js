@@ -147,7 +147,7 @@
                     <Link><SearchNormal1></SearchNormal1></Link>
                 </div>
                 <div className='payment-btn mx-5'>
-                    <Link className='bg-primary p-3 px-6 text-white rounded-3xl'>Payment</Link>
+                    <Link to='/payment' className='bg-primary p-3 px-6 text-white rounded-3xl'>Payment</Link>
                 </div>
                 <div className='notification mx-5'>
                     <NotificationBing></NotificationBing>
